@@ -7,11 +7,13 @@ const healthResponse = {
 	status: 'up',
 }
 
-const healthResource = (req: Request, res: Response) => {
+function healthResource(req: Request, res: Response) {
 	res.status(200);
-	res.send(healthResponse);
+	res.json(healthResponse);
 }
 
-module.exports = healthResource;
+export {
+	healthResource
+}
 
 // module.exports = {healthResource, ... } // if more than 1 resource
